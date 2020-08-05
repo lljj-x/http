@@ -1,0 +1,7 @@
+{
+  "presets": [
+    ["@lljj/babel-preset"]
+  ],
+  "plugins": [
+  ]
+}

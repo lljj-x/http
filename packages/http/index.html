@@ -1,0 +1,54 @@
+<!DOCTYPE html><html lang="en" class="w3c"><head>
+    <meta charset="UTF-8">
+    <title>test</title>
+</head>
+<body>
+<script src="https://cdn.jsdelivr.net/npm/@lljj/polyfill@0.1.1/dist/polyfill.umd.min.js"></script>
+<script src="./dist/http.umd.js"></script>
+<script>
+    const { http, serviceConfig, Service } = window.http;
+
+    http.headers.common['Authorization'] = 'Basic YXBpOnBhc3N3b3Jk';
+
+    serviceConfig.set({
+        showLoading() {
+            document.body.style.backgroundColor = 'red';
+        },
+        hideLoading() {
+            setTimeout(() => {
+                document.body.style.backgroundColor = '';
+            });
+        }
+    });
+    const source = http.CancelToken.source();
+    const testService = new Service({
+        url: '/test.json',
+        method: 'get',
+        loading: true,
+        // usePreResult: true,
+        cache: true,
+        jsonpCallback: 'myCall',
+        // useLocalCache: 14,
+        cancelToken: source.token,
+        sendAfter(request) {
+
+        },
+        // useLocalCache: 10,
+        // cancelToken: source.token,
+        // params: {
+        //     a: 'b'
+        // }
+    });
+
+    testService.http({
+        params: {
+            a: 'b'
+        }
+    }).then(res => {
+        console.log(res);
+    }).catch((err) => {
+        console.log(err);
+        // debugger;
+    });
+</script>
+</body></html>

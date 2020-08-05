@@ -1,6 +1,6 @@
 {
     "private": true,
-    "description": "基于Vue Resource的http请求封装",
+    "description": "基于Vue Resource的http xhr请求框架",
     "repository": "https://github.com/lljj-x/http",
     "homepage": "https://github.com/lljj-x/http",
     "author": "Liu.Jun",
