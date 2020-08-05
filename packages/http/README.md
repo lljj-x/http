@@ -486,11 +486,11 @@ import { http, Service } from '@lljj/http';
 参数 | 类型 | 描述
 --------- | ---- | -----------
 loading | `Bool` | 显示请求loading
-transformParams | `function`, | function(params) ,接受当前请求参数，返回一个新的参数，或者返回一个promise对象
+transformParams | `function` | function(params) ,接受当前请求参数，返回一个新的参数，或者返回一个promise对象
 cache | `Bool` | cache 用户固定jsonp callback，和get请求不加随机数
 isCancel | `Bool` |  如果第二次请求发起时，是否尝试取消上一次的请求
 usePreResult | `Bool` | 多次请求同一个接口，皆返回第一次请求promise实例，不检查参数变更
-useLocalCache: 0, | `Bool` | // resolve就缓存 通过本地缓存（session storage） cache 接口数据，0 不缓存，单位 （s） 3 * 24 * 60 * 60（post只支持简单的数据提交，formData file等不支持）
+useLocalCache: 0 | `number` | // resolve就缓存 通过本地缓存（session storage） cache 接口数据，0 不缓存，单位 （s） 3 * 24 * 60 * 60（post只支持简单的数据提交，formData file等不支持）
 
 > 注：如果使用laoding方法，需要先做如下的初始化配置
 
