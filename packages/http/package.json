@@ -1,6 +1,6 @@
 {
   "name": "@lljj/http",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "基于Vue Resource的http xhr请求框架",
   "main": "dist/http.umd.min.js",
   "module": "dist/http.esm.min.js",
